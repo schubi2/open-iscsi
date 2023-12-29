@@ -1238,7 +1238,8 @@ Host mode with stats submode
 6. Configuration
 ================
 
-The default configuration file is /etc/iscsi/iscsid.conf, but the
+The default configuration file is /etc/iscsi/iscsid.conf or
+<vendordir>/iscsid.conf if it is not available, but the
 directory is configurable with the top-level make option "homedir".
 The remainder of this document will assume the /etc/iscsi directory.
 This file contains only configuration that could be overwritten by iSCSI
