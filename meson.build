@@ -96,7 +96,7 @@ endif
 
 lib_econf = dependency(
   'libeconf',
-  required : get_option('econf'))
+  required : false)
 
 if vendordir != '' and not lib_econf.found()
   error('Need libeconf if vendordir is defined.')

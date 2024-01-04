@@ -1,8 +1,5 @@
 # options for meson build system
 
-# supporting libeconf for parsing configuration files
-option('econf',       type : 'feature')
-
 # various subsystems that can be supported or not
 option('no_systemd', type: 'boolean', value: false,
   description: 'Do not use systemd [false]')
