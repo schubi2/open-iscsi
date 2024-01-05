@@ -290,7 +290,11 @@ endif
 install_data(iscsi_etc_iface_file_src, install_dir: db_root / 'ifaces')
 
 # the iscsid.conf config file
-install_data(iscsi_etc_config_file_src, install_dir: home_dir)
+if vendordir != ''
+  install_data(iscsi_config_file_src, install_dir: vendordir)
+else
+  install_data(iscsi_config_file_src, install_dir: home_dir)
+endif
 
 # create a *unique* initiatorname file
 if not meson.is_cross_build()
