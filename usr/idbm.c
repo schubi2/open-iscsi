@@ -1340,10 +1340,10 @@ static void idbm_sync_config(void)
 
 	if ( strcmp(config_file, CONFIG_FILE) == 0) {
 		/* Standard configuration file iscsid.conf. So we are reading vendor entries too */
-		error = econf_readDirs(&file,
-				       VENDORDIR,
-				       ISCSI_CONFIG_ROOT,
-				       "iscsid", "conf", "= \t", "#");
+		error = econf_readConfig( &file,
+					  ISCSI,
+					  VENDORDIR,
+					  "iscsid", "conf", "= \t", "#");
 	} else {
 		/* All other configuration files */
 		error = econf_readFile(&file, config_file, "= \t", "#");

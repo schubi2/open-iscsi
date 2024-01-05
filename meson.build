@@ -291,7 +291,7 @@ install_data(iscsi_etc_iface_file_src, install_dir: db_root / 'ifaces')
 
 # the iscsid.conf config file
 if vendordir != ''
-  install_data(iscsi_config_file_src, install_dir: vendordir)
+  install_data(iscsi_config_file_src, install_dir: vendordir / 'iscsi')
 else
   install_data(iscsi_config_file_src, install_dir: home_dir)
 endif

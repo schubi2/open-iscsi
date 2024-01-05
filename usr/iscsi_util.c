@@ -233,10 +233,10 @@ char *cfg_get_string_param(char *pathname, const char *key)
 	econf_err error;
 	if ( strcmp(pathname, CONFIG_FILE) == 0) {
 		/* Standard configuration file iscsid.conf. So we are reading vendor entries too */
-		error = econf_readDirs(&file,
-				       VENDORDIR,
-				       ISCSI_CONFIG_ROOT,
-				       "iscsid", "conf", "= \t", "#");
+		error = econf_readConfig( &file,
+					  ISCSI,
+					  VENDORDIR,
+					  "iscsid", "conf", "= \t", "#");
 	} else {
 		/* All other configuration files */
 		error = econf_readFile(&file, pathname, "= \t", "#");

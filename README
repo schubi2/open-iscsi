@@ -162,6 +162,8 @@ Option			Description
 			 of meson)
 -Disns_supported=<BOOL>	Enable/disable iSNS support [true]
 			(set to "false" to disable use of open-isns)
+-Dvendordir=<DIR>	Directory for distribution provided configuration files
+			(e.g. "/usr/etc")
 
 
 Building open-iscsi/iscsiuio using make/autoconf (Deprecated)
@@ -170,13 +172,13 @@ If you wish to build using the older deprecated system, you can
 simply run:
 
 	make [<MAKE-OPTIONS>]
-	make [DESTDIR=<SOME-DIR>] install
+	make [DESTDIR=<SOME-DIR>|VENDORDIR=<SOME_DIR>] install
 
 Where MAKE-OPTIONS are from:
-	* SBINDIR=<some-dir>  [/usr/bin]   for executables
-	* DBROOT=<some-dir>   [/etc/iscsi] for iscsi database files
-	* HOMEDIR=<some-dir>  [/etc/iscsi] for iscsi config files
-
+	* SBINDIR=<some-dir>	[/usr/bin]   for executables
+	* DBROOT=<some-dir>   	[/etc/iscsi] for iscsi database files
+	* HOMEDIR=<some-dir>  	[/etc/iscsi] for iscsi config files
+	* VENDORDIR=<some-dir>  	     Directory for distribution provided configuration files like iscsid.conf
 
 4. Open-iSCSI daemon
 ====================
@@ -1239,7 +1241,7 @@ Host mode with stats submode
 ================
 
 The default configuration file is /etc/iscsi/iscsid.conf or
-<vendordir>/iscsid.conf if it is not available, but the
+<vendordir>/iscsi/iscsid.conf if it is not available, but the
 directory is configurable with the top-level make option "homedir".
 The remainder of this document will assume the /etc/iscsi directory.
 This file contains only configuration that could be overwritten by iSCSI
